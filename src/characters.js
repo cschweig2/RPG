@@ -1,23 +1,22 @@
 // import 'storeState.js'
 
-const storeState = (initialState) => {
-  let currentState = initialState;
-  return (stateChangeFunction) => {
-    const newState = stateChangeFunction(currentState);
-    currentState = {...newState};
-    return newState;
-  }
-}
+// const storeState = (initialState) => {
+//   let currentState = initialState;
+//   return (stateChangeFunction) => {
+//     const newState = stateChangeFunction(currentState);
+//     currentState = {...newState};
+//     return newState;
+//   }
+// }
 
-const changeStateString = (prop) => {
-  return (string) => {
-    return (state) => ({
-      ...state,
-      [prop] : (state[prop] || "") + string
-    });
-  }
-}
-
+// const changeStateString = (prop) => {
+//   return (string) => {
+//     return (state) => ({
+//       ...state,
+//       [prop] : (state[prop] || "") + string
+//     });
+//   }
+// }
 
 const initialValues = { health: 100, endurance: 100, magika: 100, stamina: 100 };
 // add a name and species when creating a character
