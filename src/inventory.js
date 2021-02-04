@@ -35,4 +35,4 @@ console.log("new inv2 state", newInv2State);
 
 const joyce = addName("Joyce");
 const newInv3State = inv3(joyce);
-console.log("the new inv3 state", newInv3Sate);
+console.log("the new inv3 state", newInv3Sate); 

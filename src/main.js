@@ -28,6 +28,15 @@ const changeStateObject = (prop) => {
   }
 }
 
+const changeStateValue = (prop) => {
+  return (value) => {
+    return (state) => ({
+      ...state,
+      [prop] : (state[prop] || 0) + value
+    });
+  }
+}
+
 // const newObject = Object.assign({}, ...state)
 
 const stateControl = storeState();
@@ -55,3 +64,15 @@ console.log("add inventory to character 1", newChar);
 
 const newChar2 = Object.assign(inv1CurrentState, char1CurrentState);
 console.log("add inventory..", newChar2);
+
+// changing level
+const addLevel = changeStateValue("level");
+const charLevelUp = addLevel(1);
+const extraLevelUp = addLevel(5);
+
+// adding level to character 1
+const newChar1Level = char1(charLevelUp);
+const newChar2Level = char1(charLevelUp);
+const newChar3Level = char1(charLevelUp);
+const newChar4Level = char1(extraLevelUp);
+console.log("add level to char 1", newChar4Level);
